@@ -1,0 +1,27 @@
+{
+  "project_name": "HW7 California Housing Reusable Regression Workflow",
+  "dataset_name": "California Housing",
+  "data_path": "data/housing.csv",
+  "source_url": "https://raw.githubusercontent.com/jaynilpatel/california-housing/refs/heads/master/datasets/housing/housing.csv",
+  "target_column": "median_house_value",
+  "numeric_features": [
+    "longitude",
+    "latitude",
+    "housing_median_age",
+    "total_rooms",
+    "total_bedrooms",
+    "population",
+    "households",
+    "median_income"
+  ],
+  "categorical_features": [
+    "ocean_proximity"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "cv_folds": 5,
+  "output_dir": "outputs",
+  "model_filename": "california_housing_model.pkl",
+  "download_if_missing": true,
+  "publish_site_results": true
+}

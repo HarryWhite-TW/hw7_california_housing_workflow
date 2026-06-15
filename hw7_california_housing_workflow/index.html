@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HW7 reusable California Housing CRISP-DM regression workflow." />
+  <title>HW7 · California Housing Workflow</title>
+  <link rel="stylesheet" href="site/style.css" />
+</head>
+<body>
+  <header class="shell">
+    <p class="eyebrow">AI'26 · L10C · HW7</p>
+    <h1>California Housing, rebuilt as a reusable workflow.</h1>
+    <p class="lead">A configuration-driven CRISP-DM regression pipeline extracted from HW6: schema validation, preprocessing, multiple linear regression, evaluation, visual reporting, and a lightweight Codex Skill.</p>
+    <div class="status-row">
+      <span class="status" data-status>Loading status</span>
+      <span class="muted" data-dataset-meta></span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section>
+      <div class="section-head"><div><p class="eyebrow">Evidence</p><h2>Model results</h2></div></div>
+      <div class="grid" data-metrics></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><p class="eyebrow">CRISP-DM</p><h2>One command, six stages</h2></div></div>
+      <div class="workflow">
+        <article class="step"><b>01 Understand</b><small>Define the regression target and learning scope.</small></article>
+        <article class="step"><b>02 Inspect</b><small>Validate schema, rows, distributions, and missing values.</small></article>
+        <article class="step"><b>03 Prepare</b><small>Impute numerical and categorical values, then one-hot encode.</small></article>
+        <article class="step"><b>04 Model</b><small>Fit LinearRegression inside a saved preprocessing pipeline.</small></article>
+        <article class="step"><b>05 Evaluate</b><small>Measure test R², MAE, RMSE, and K-fold stability.</small></article>
+        <article class="step"><b>06 Publish</b><small>Generate model, tables, report, images, and site data.</small></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><p class="eyebrow">Gallery</p><h2>Generated workflow artifacts</h2></div><span class="muted">Images appear after the real workflow run.</span></div>
+      <div class="gallery">
+        <figure class="panel"><img src="outputs/homework_infographic.png" alt="HW7 all-in-one infographic" /><figcaption>All-in-one homework infographic</figcaption></figure>
+        <figure class="panel"><img src="outputs/dataset_overview_dashboard.png" alt="Dataset overview" /><figcaption>Dataset overview dashboard</figcaption></figure>
+        <figure class="panel"><img src="outputs/correlation_heatmap.png" alt="Correlation heatmap" /><figcaption>Numerical correlation heatmap</figcaption></figure>
+        <figure class="panel"><img src="outputs/actual_vs_predicted.png" alt="Actual versus predicted" /><figcaption>Actual versus predicted values</figcaption></figure>
+        <figure class="panel"><img src="outputs/residual_diagnostics.png" alt="Residual diagnostics" /><figcaption>Residual diagnostics</figcaption></figure>
+        <figure class="panel"><img src="outputs/feature_coefficients.png" alt="Feature coefficients" /><figcaption>Largest model coefficients</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="panel cta">
+      <div><p class="eyebrow">Reproduce</p><h2>Run the same workflow elsewhere.</h2><p class="lead">Clone the repository, install requirements, and execute the configured entry point. The Skill instructs Codex to run and verify the existing workflow instead of rewriting it.</p></div>
+      <a class="button" href="WORKFLOW.md">Read workflow</a>
+    </section>
+  </main>
+
+  <footer class="shell">HarryWhite-TW · HW7 California Housing Workflow</footer>
+  <script src="site/results.js"></script>
+  <script src="site/app.js"></script>
+</body>
+</html>
