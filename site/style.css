@@ -38,6 +38,8 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); margin: 0; }
 .metric-card strong { font-size: 2rem; }
 .metric-card.pending { grid-column: span 12; }
 .workflow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.layer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.status-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .step { padding: 18px; }
 .step b { display: block; margin-bottom: 8px; }
 .step small { color: #8fa4ba; line-height: 1.5; }
@@ -47,14 +49,15 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); margin: 0; }
 .panel figcaption { padding: 14px 7px 5px; color: #a9bbcf; }
 .cta { padding: 34px; display: flex; justify-content: space-between; gap: 24px; align-items: center; }
 .button { display: inline-flex; text-decoration: none; border-radius: 999px; padding: 12px 18px; background: #edf5ff; color: #07111f; font-weight: 700; }
+.link-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
 footer { padding: 20px 0 50px; color: #71879e; }
 @media (max-width: 900px) {
   .metric-card { grid-column: span 6; }
-  .workflow { grid-template-columns: repeat(2, 1fr); }
+  .workflow, .layer-grid, .status-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 620px) {
   header { padding-top: 48px; }
   .metric-card { grid-column: span 12; }
-  .workflow, .gallery { grid-template-columns: 1fr; }
+  .workflow, .layer-grid, .status-grid, .gallery { grid-template-columns: 1fr; }
   .cta, .section-head { align-items: flex-start; flex-direction: column; }
 }

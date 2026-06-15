@@ -13,15 +13,15 @@ const metricGrid = document.querySelector("[data-metrics]");
 const datasetMeta = document.querySelector("[data-dataset-meta]");
 
 if (results.status === "complete" && results.metrics) {
-  status.textContent = "Workflow verified";
+  status.textContent = "Workflow and Codex Skill verified";
   status.dataset.state = "complete";
-  datasetMeta.textContent = `${formatNumber(results.rows, 0)} rows · ${results.columns} columns · ${results.features} features`;
+  datasetMeta.textContent = `${formatNumber(results.rows, 0)} rows / ${results.columns} columns / ${results.features} features`;
 
   const cards = [
-    ["Test R²", formatNumber(results.metrics.r2, 4)],
+    ["Test R2", formatNumber(results.metrics.r2, 4)],
     ["MAE", formatNumber(results.metrics.mae)],
     ["RMSE", formatNumber(results.metrics.rmse)],
-    ["CV R² mean", formatNumber(results.metrics.cv_r2_mean, 4)],
+    ["CV R2 mean", formatNumber(results.metrics.cv_r2_mean, 4)],
   ];
   metricGrid.innerHTML = cards
     .map(([label, value]) => `<article class="metric-card"><span>${label}</span><strong>${value}</strong></article>`)

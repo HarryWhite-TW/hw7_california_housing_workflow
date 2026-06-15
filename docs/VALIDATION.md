@@ -181,6 +181,75 @@ This change does not remove, skip, or lower any tests. It only avoids an environ
 
 ## Known Limitations
 
-- The GitHub Pages URL is linked as the intended dashboard location, but this validation did not enable Pages or verify a deployed public site.
 - The model is a linear regression workflow demonstration. Coefficients and correlations are not causal evidence.
 - `data/housing.csv` is intentionally ignored by Git because it is downloaded/generated input data.
+
+## Repository Skill Finalization Validation
+
+Date: 2026-06-15
+
+Status:
+
+```text
+Implementation validation: Passed
+Fresh-session explicit activation: Passed
+Fresh-session implicit activation: Passed
+Overall Skill status: Completed & Verified
+```
+
+Added validation coverage:
+
+- repository-scoped skill package structure;
+- skill YAML front matter;
+- output contract reference;
+- `verify_outputs.py` artifact checks;
+- documentation hub links;
+- canonical workflow verifier command;
+- guardrails against AutoML, causal claims, undeclared dependencies, commit, and push.
+
+GitHub Pages HTTP verification:
+
+```text
+StatusCode: 200
+ContentCheck: passed
+```
+
+Fresh-session explicit activation validation:
+
+```text
+Python: .venv\Scripts\python.exe / Python 3.10.9
+pytest: 8 passed in 5.20s
+verify_outputs.py: exit code 0
+File changes during validation: none
+Commit / Push: none
+```
+
+Fresh-session implicit activation validation:
+
+```text
+Python: .venv\Scripts\python.exe / Python 3.10.9
+pytest: 8 passed in 5.88s
+verify_outputs.py: exit code 0
+Formal metrics unchanged
+File changes during validation: none
+Initial and final git status: identical
+Commit / Push: none
+```
+
+Final public status:
+
+```text
+Workflow: Completed & Verified
+Codex Skill: Completed & Verified
+Explicit activation: Passed
+Implicit activation: Passed
+Artifact verification: Passed
+Public deployment: Verified
+```
+
+Current local environment note:
+
+```text
+Python: 3.10.9
+pip: 26.1.2
+```

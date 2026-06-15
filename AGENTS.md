@@ -7,9 +7,10 @@ Build and maintain a reusable, beginner-readable CRISP-DM regression workflow. T
 ## Required commands
 
 ```powershell
-python -m pip install -r requirements.txt
-python -m pytest
-python run_workflow.py --config configs/california_housing.json
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe run_workflow.py --config configs\california_housing.json
+.\.venv\Scripts\python.exe .agents\skills\tabular-regression-workflow\scripts\verify_outputs.py --config configs\california_housing.json
 ```
 
 ## Engineering boundaries
@@ -23,6 +24,11 @@ python run_workflow.py --config configs/california_housing.json
 - Do not replace the main linear regression model with AutoML.
 - Do not claim that model coefficients prove causal relationships.
 - Do not commit or push unless the user explicitly approves the final reviewed state.
+- Treat `WORKFLOW.md` as the source of truth for the analysis contract.
+- Use `.agents/skills/tabular-regression-workflow/SKILL.md` when Codex is asked to operate this workflow.
+- Select `.venv\Scripts\python.exe` on Windows when available, then `.venv/bin/python`, then `python3` or `python`.
+- Run the repository verifier before reporting generated outputs as complete.
+- Do not claim Fresh-session skill activation has passed unless it was tested in a new session.
 
 ## Validation before reporting completion
 
@@ -31,4 +37,5 @@ python run_workflow.py --config configs/california_housing.json
 3. Run the real California Housing workflow when internet or `data/housing.csv` is available.
 4. Confirm every file referenced by `index.html` exists.
 5. Confirm `site/results.js` contains real workflow results rather than `not-run`.
-6. Report exact commands and results.
+6. Run the repository verifier.
+7. Report exact commands and results.
